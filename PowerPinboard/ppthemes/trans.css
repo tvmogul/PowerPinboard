@@ -1,0 +1,7 @@
+﻿/*
+Author: Bill SerGio, The Infomercial King
+Remove this to have a transparent background which looks cool... or add any color background here! 
+*/   
+.insides {
+    background: transparent !important;
+}

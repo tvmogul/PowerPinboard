@@ -1,0 +1,20 @@
+﻿.spin360
+{
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes spin 
+{
+    0% { -webkit-transform: rotateX(0); }
+    100%   { -webkit-transform: rotateX(-360deg); }
+}   
+    
+  
+ #pinboard { 
+    perspective: 1000;  
+ } 
+  
