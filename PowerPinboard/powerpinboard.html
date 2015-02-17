@@ -76,6 +76,7 @@
         $('button[data-filter=".superman"]').css('display', 'none');
         $('button[data-filter=".ufo"]').css('display', 'none');
         //$(function () {   // Shorthand for $(document).ready()
+
         jQuery(document).ready(function () {
             var _demo = getUrlVar('demo');
             if (_demo.length < 1) {
@@ -165,6 +166,7 @@
                     $('button[data-filter=".flash"]').css('display', 'none');
                     $('button[data-filter=".superman"]').css('display', 'none');
                     $('button[data-filter=".ufo"]').css('display', 'none');
+
                 }
                 else {
                     apiURL = 'ppdata/data1.txt';
@@ -377,6 +379,42 @@
             width: 270px !important;
         }
         */
+
+
+
+         .transparent img:hover { 
+            /* IE 8 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+            /* IE 5-7 */
+            filter: alpha(opacity=90);
+
+            /* Netscape */
+            -moz-opacity: 0.9;
+
+            /* Safari 1.x */
+            -khtml-opacity: 0.9;
+
+            /* Good browsers */
+            opacity: 0.9;
+        }
+
+        .non-transparent { 
+            /* IE 8 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+            /* IE 5-7 */
+            filter: alpha(opacity=50);
+
+            /* Netscape */
+            -moz-opacity: 0.5;
+
+            /* Safari 1.x */
+            -khtml-opacity: 0.5;
+
+            /* Good browsers */
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
@@ -467,11 +505,18 @@
             </div>
 
         </div>
-
-
     </div>
 
-
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-59762146-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 </body>
 </html>

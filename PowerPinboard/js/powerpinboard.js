@@ -99,9 +99,13 @@
                 error: function (e) {
                     isLoading = false;
                     $('#pinboard').html('');
-                    //alert('error:' + JSON.stringify(e));
+                    //$('#pinboard').addClass('error');
                     $('#pinboard').html(JSON.stringify(e));
                     $('#pinboard').css('text-align', 'left');
+                },
+                beforeSend: function(data){
+                    //$('#pinboard').removeClass('error');
+                    //$('#pinboard').html(' (loading...)');
                 }
             });
         }
@@ -246,6 +250,26 @@
             applyLayout();
 
         };
+
+        // Our data files are very simple but for more complex data 
+        // you should set a filter like on teh data returned.
+        function filterData(data) {
+            // filter all the nasties out
+            // no body tags
+            data = data.replace(/<?\/body[^>]*>/g, '');
+            // no linebreaks
+            data = data.replace(/[\r|\n]+/g, '');
+            // no comments
+            data = data.replace(/<--[\S\s]*?-->/g, '');
+            // no noscript blocks
+            data = data.replace(/<noscript[^>]*>[\S\s]*?<\/noscript>/g, '');
+            // no script blocks
+            data = data.replace(/<script[^>]*>[\S\s]*?<\/script>/g, '');
+            // no self closing scripts
+            data = data.replace(/<script.*\/>/, '');
+            // [... add as needed ...]
+            return data;
+        }
 
         $.fn.Rocker = function (method, options) {
             options = $.extend({
